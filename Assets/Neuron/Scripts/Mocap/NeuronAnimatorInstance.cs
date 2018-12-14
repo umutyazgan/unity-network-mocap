@@ -24,11 +24,16 @@ using UnityEngine.Events;
 using UnityEngine;
 using Neuron;
 
+
+
 public class NeuronAnimatorInstance : NeuronInstance
 {
+ //   address = "asd";
     public Animator boundAnimator = null;
     public bool physicalUpdate = false;
 	public bool enableHipsMovement = true;
+    //   NeuronInstance.port = GlobalVar.axis_port;
+    // port = GlobalVar.axis_port;
 
     public NeuronAnimatorPhysicalReference physicalReference = new NeuronAnimatorPhysicalReference();
     Vector3[] bonePositionOffsets = new Vector3[(int)HumanBodyBones.LastBone];

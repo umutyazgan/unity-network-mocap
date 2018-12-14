@@ -287,6 +287,7 @@ namespace NeuronDataReaderManaged
 
 		public override bool Connect( string address, int port )
 		{
+            Debug.Log(address);
 			connectEvent.Reset();
 			socket.BeginConnect( address, port, new AsyncCallback( connectedCallBack ), socket );
 

@@ -16,8 +16,12 @@ public class Player : NetworkBehaviour
 
     void Start()
     {
+        //mainCamera = Camera.main.gameObject;
         mainCamera = Camera.main.gameObject;
+
         EnablePlayer();
+        //mainCamera = Camera.main.gameObject;
+
     }
 
     void DisablePlayer()
@@ -41,12 +45,15 @@ public class Player : NetworkBehaviour
     {
         if (isLocalPlayer)
         {
+
             mainCamera.SetActive(false);
         }
         onToggleShared.Invoke(true);
         if (isLocalPlayer)
         {
+            //GlobalVar.axis_port++;
             onToggleLocal.Invoke(true);
+            //NeuronAnimatorInstance.
         }
         else
         {

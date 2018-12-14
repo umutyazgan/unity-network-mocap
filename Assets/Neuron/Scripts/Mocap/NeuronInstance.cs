@@ -19,26 +19,39 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using NeuronDataReaderManaged;
 
 namespace Neuron
 {
 	// NeuronInstance 
-	public class NeuronInstance : MonoBehaviour
+	public class NeuronInstance : NetworkBehaviour
 	{
-		public string						address = "127.0.0.1";
-		public int							port = 7001;
-		int									commandServerPort = -1;
-		public NeuronConnection.SocketType	socketType = NeuronConnection.SocketType.TCP;
-		public int							actorID = 0;
-		public bool							connectToAxis = false;
-		public float 						hipHeightOffset = 0.035f;
-		
-		protected NeuronActor				boundActor = null;
-		protected bool						standalone = true;
-		protected int						lastEvaluateTime = 0;
-		protected bool						boneSizesDirty = false;
-		protected bool						applyBoneSizes = false;
+        [SyncVar]
+        public string						address = "127.0.0.1";
+        [SyncVar]
+        public int							port = 7001;
+        [SyncVar]
+        int									commandServerPort = -1;
+        [SyncVar]
+        public NeuronConnection.SocketType	socketType = NeuronConnection.SocketType.TCP;
+        [SyncVar]
+        public int							actorID = 0;
+        [SyncVar]
+        public bool							connectToAxis = false;
+        [SyncVar]
+        public float 						hipHeightOffset = 0.035f;
+
+        //[SyncVar]
+        protected NeuronActor				boundActor = null;
+        [SyncVar]
+        protected bool						standalone = true;
+        [SyncVar]
+        protected int						lastEvaluateTime = 0;
+        [SyncVar]
+        protected bool						boneSizesDirty = false;
+        [SyncVar]
+        protected bool						applyBoneSizes = false;
 		
 		public bool							noFrameData { get ; private set; }
 		
