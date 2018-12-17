@@ -11,6 +11,9 @@ public class NetworkLobbyHook : LobbyHook
         NeuronAnimatorInstance animator = gamePlayer.GetComponent<NeuronAnimatorInstance>();
 
         animator.address = lobby.playerName;
+        animator.enabled = true;
+        //gameObject VRCam = 
+        //animator.transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
         Debug.Log(lobby.name.ToString());
     }
 }
