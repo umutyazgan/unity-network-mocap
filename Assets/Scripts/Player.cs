@@ -17,7 +17,7 @@ public class Player : NetworkBehaviour
     void Start()
     {
         //mainCamera = Camera.main.gameObject;
-        mainCamera = Camera.main.gameObject;
+        //mainCamera = Camera.main.gameObject;
 
         EnablePlayer();
         //mainCamera = Camera.main.gameObject;
@@ -28,7 +28,14 @@ public class Player : NetworkBehaviour
     {
         if (isLocalPlayer)
         {
-            mainCamera.SetActive(true);
+            GameObject cameraHolder = gameObject.transform.GetChild(1).gameObject;
+            GameObject neuronCamera = cameraHolder.transform.GetChild(0).gameObject;
+            neuronCamera.SetActive(false);
+
+            //Transform neuronCameraHolder = transform.Find("Camera Holder");
+            //Transform neuronCamera = neuronCameraHolder.Find("Camera");
+            //neuronCamera.
+            //mainCamera.SetActive(true);
         }
         onToggleShared.Invoke(false);
         if (isLocalPlayer)
@@ -45,8 +52,10 @@ public class Player : NetworkBehaviour
     {
         if (isLocalPlayer)
         {
-
-            mainCamera.SetActive(false);
+            GameObject cameraHolder = gameObject.transform.GetChild(1).gameObject;
+            GameObject neuronCamera = cameraHolder.transform.GetChild(0).gameObject;
+            neuronCamera.SetActive(true);
+            //mainCamera.SetActive(false);
         }
         onToggleShared.Invoke(true);
         if (isLocalPlayer)

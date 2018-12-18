@@ -1695,7 +1695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1521679585545320
 GameObject:
   m_ObjectHideFlags: 1
@@ -4415,7 +4415,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1746203361896072}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.095475, y: 0.89, z: -2.2421708}
+  m_LocalPosition: {x: 7.183316, y: 0.19, z: 18.973139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4036414621199846}
@@ -11917,9 +11917,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1520366093664606}
-        m_MethodName: SetActive
-        m_Mode: 0
+      - m_Target: {fileID: 1355241227829552, guid: 8b50316b695f6844dab4c7ba51b532e4,
+          type: 2}
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -12018,7 +12019,7 @@ MonoBehaviour:
   m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Target: {fileID: 4510295017235074}
+  m_Target: {fileID: 4036414621199846}
   m_ChildIndex: 0
   m_SendInterval: 0.1
   m_SyncRotationAxis: 7
