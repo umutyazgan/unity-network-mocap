@@ -65,10 +65,10 @@ public class Player : NetworkBehaviour
         if (isLocalPlayer)
         {
             //GlobalVar.axis_port++;
-            if(gameObject.GetComponent<NeuronAnimatorInstance>().enabled == false)
-            {
+            //if(gameObject.GetComponent<NeuronAnimatorInstance>().enabled == false)
+            //{
                 gameObject.GetComponent<NeuronAnimatorInstance>().enabled = true;
-            }
+            //}
             //onToggleLocal.Invoke(true);
             //NeuronAnimatorInstance.
         }
