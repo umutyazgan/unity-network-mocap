@@ -61,13 +61,14 @@ public class Player : NetworkBehaviour
             neuronCamera.SetActive(true);
             //mainCamera.SetActive(false);
         }
+        gameObject.GetComponent<NeuronAnimatorInstance>().enabled = true;
         onToggleShared.Invoke(true);
         if (isLocalPlayer)
         {
             //GlobalVar.axis_port++;
             //if(gameObject.GetComponent<NeuronAnimatorInstance>().enabled == false)
             //{
-                gameObject.GetComponent<NeuronAnimatorInstance>().enabled = true;
+            //    gameObject.GetComponent<NeuronAnimatorInstance>().enabled = true;
             //}
             //onToggleLocal.Invoke(true);
             //NeuronAnimatorInstance.
