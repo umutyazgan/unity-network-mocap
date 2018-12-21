@@ -40,7 +40,11 @@ public class Player : NetworkBehaviour
         onToggleShared.Invoke(false);
         if (isLocalPlayer)
         {
-            onToggleLocal.Invoke(false);
+            //if (gameObject.GetComponent<NeuronAnimatorInstance>().enabled == true)
+            //{
+                gameObject.GetComponent<NeuronAnimatorInstance>().enabled = false;
+            //}
+            //onToggleLocal.Invoke(false);
         }
         else
         {
@@ -61,7 +65,11 @@ public class Player : NetworkBehaviour
         if (isLocalPlayer)
         {
             //GlobalVar.axis_port++;
-            onToggleLocal.Invoke(true);
+            if(gameObject.GetComponent<NeuronAnimatorInstance>().enabled == false)
+            {
+                gameObject.GetComponent<NeuronAnimatorInstance>().enabled = true;
+            }
+            //onToggleLocal.Invoke(true);
             //NeuronAnimatorInstance.
         }
         else
