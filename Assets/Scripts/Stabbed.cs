@@ -1,32 +1,33 @@
 ﻿using UnityEngine;
-using UnityEngine.Networking;
+//using UnityEngine.Networking;
 
-public class Stabbing : NetworkBehaviour
+public class Stabbed : MonoBehaviour
 {
     float ellapsedTime;
-    bool canAttack;
+    //bool canAttack;
     Player player;
-
+    GameObject NeuronRobot;
     void Awake()
     {
-        player = GetComponent<Player>();
+        NeuronRobot = gameObject.transform.root.gameObject;
+        player = NeuronRobot.GetComponent<Player>();
         Debug.Log(player.name);
     }
 
     void Start()
     {
-        if (isLocalPlayer)
-        {
-            canAttack = true;
-        }
+    //    if (isLocalPlayer)
+    //    {
+    //        canAttack = true;
+    //    }
     }
 
     void Update()
     {
-        if (!canAttack)
-        {
-            return;
-        }
+    //    if (!canAttack)
+    //    {
+    //        return;
+    //    }
         ellapsedTime += Time.deltaTime;
 
     }
@@ -37,7 +38,10 @@ public class Stabbing : NetworkBehaviour
         if (collision.gameObject.tag == "weapon" && this.gameObject.tag == "Player" /* gameObject.tag == "flesh" */ )
         {
             Debug.Log("if weapon and player");
-            player.Die();
+            if (player.Alive == true)
+            {
+                player.Die();
+            }
             //CmdStabbed(this.gameObject.transform.parent.gameObject);
         }
     }
