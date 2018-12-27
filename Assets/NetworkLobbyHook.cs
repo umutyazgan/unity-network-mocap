@@ -9,8 +9,10 @@ public class NetworkLobbyHook : LobbyHook
     {
         LobbyPlayer lobby = lobbyPlayer.GetComponent<LobbyPlayer>();
         NeuronAnimatorInstance animator = gamePlayer.GetComponent<NeuronAnimatorInstance>();
-
+        Debug.Log("NetworkLobbyHook");
+        Debug.Log(animator.enabled);
         animator.address = lobby.playerName;
+        Debug.Log(animator.address);
         //animator.enabled = true;
         //gameObject VRCam = 
         //animator.transform.GetChild(1).GetChild(0).gameObject.SetActive(true);

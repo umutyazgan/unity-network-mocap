@@ -11,7 +11,7 @@ public class Stabbed : MonoBehaviour
     {
         NeuronRobot = gameObject.transform.root.gameObject;
         player = NeuronRobot.GetComponent<Player>();
-        Debug.Log(player.name);
+        //Debug.Log(player.name);
     }
 
     void Start()
@@ -34,7 +34,7 @@ public class Stabbed : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("OnCollisionEnter");
+        //Debug.Log("OnCollisionEnter");
         if (collision.gameObject.tag == "weapon" && this.gameObject.tag == "Player" /* gameObject.tag == "flesh" */ )
         {
             Debug.Log("if weapon and player");

@@ -12,16 +12,22 @@ public class Player : NetworkBehaviour
     [SerializeField] ToggleEvent onToggleRemote;
     [SerializeField] float respawnTime = 3f;
     public bool Alive = false;
+    [SyncVar]
+    public bool ThisIsTheServerPlayer = false;
 
     GameObject mainCamera;
 
     void Start()
     {
-        if (isServer)
+        if (isLocalPlayer && isServer)
+        {
+            ThisIsTheServerPlayer = true;
+        }
+        if (ThisIsTheServerPlayer)
         {
             transform.position = new Vector3(0, 0, 0);
         }
-        else if (isClient)
+        else
         {
             transform.position = new Vector3(3, 0, 3);
         }
@@ -74,7 +80,8 @@ public class Player : NetworkBehaviour
         Alive = true;
 
         gameObject.GetComponent<NeuronAnimatorInstance>().enabled = true;
-        onToggleShared.Invoke(true);
+        gameObject.GetComponent<NeuronAnimatorInstance>().connectToAxis = true;
+        //onToggleShared.Invoke(true);
         if (isLocalPlayer)
         {
             //GlobalVar.axis_port++;
@@ -89,6 +96,14 @@ public class Player : NetworkBehaviour
         {
             onToggleRemote.Invoke(true);
         }
+        gameObject.GetComponent<NeuronAnimatorInstance>().connectToAxis = false;
+
+        Invoke("HorribleFix", 0.5f);
+    }
+
+    void HorribleFix()
+    {
+        gameObject.GetComponent<NeuronAnimatorInstance>().connectToAxis = true;
     }
 
     void ReEnablePlayer()
