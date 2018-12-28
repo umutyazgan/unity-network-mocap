@@ -147,10 +147,18 @@ public class Player : NetworkBehaviour
     {
         //if (isLocalPlayer)
         //{
-            Transform spawn = NetworkManager.singleton.GetStartPosition();
-            transform.position = spawn.position;
-            transform.rotation = spawn.rotation;
+        //    Transform spawn = NetworkManager.singleton.GetStartPosition();
+        //    transform.position = spawn.position;
+        //    transform.rotation = spawn.rotation;
         //}
+        if (ThisIsTheServerPlayer)
+        {
+            transform.position = new Vector3(0, 0, 0);
+        }
+        else
+        {
+            transform.position = new Vector3(0, 0, 2);
+        }
         ReEnablePlayer();
         Debug.Log("Respawn()");
     }
