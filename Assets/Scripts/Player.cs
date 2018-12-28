@@ -23,13 +23,14 @@ public class Player : NetworkBehaviour
         {
             ThisIsTheServerPlayer = true;
         }
+        Debug.Log(ThisIsTheServerPlayer);
         if (ThisIsTheServerPlayer)
         {
             transform.position = new Vector3(0, 0, 0);
         }
         else
         {
-            transform.position = new Vector3(0, 0, 2);
+            transform.position = new Vector3(0, 0, 0);
         }
         //mainCamera = Camera.main.gameObject;
         //mainCamera = Camera.main.gameObject;
