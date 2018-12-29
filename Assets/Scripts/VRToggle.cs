@@ -28,8 +28,8 @@ public class VRToggle : MonoBehaviour {
         return false;
     }
 
-    // Update is called once per frame
     void Update () {
+        // Why toggle VR in doubletap? Why not just enable it in Start() method of this script?
         if (DoubleClick())
         {
             Debug.Log("ToggleVR");
