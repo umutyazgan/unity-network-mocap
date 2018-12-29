@@ -30,7 +30,7 @@ public class Player : NetworkBehaviour
         }
         else
         {
-            transform.position = new Vector3(0, 0, 0);
+            transform.position = new Vector3(0, 0, 2);
         }
         //mainCamera = Camera.main.gameObject;
         //mainCamera = Camera.main.gameObject;
