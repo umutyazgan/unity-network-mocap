@@ -34,8 +34,9 @@ public class VRToggle : MonoBehaviour {
         {
             Debug.Log("ToggleVR");
             ToggleVR();
+            //InputTracking.Recenter();
         }
-	}
+    }
 
     void ToggleVR()
     {

@@ -54,6 +54,7 @@ public class Player : NetworkBehaviour
             //Transform neuronCamera = neuronCameraHolder.Find("Camera");
             //neuronCamera.
             //mainCamera.SetActive(true);
+
         }
         gameObject.GetComponent<NeuronAnimatorInstance>().enabled = false;
 
@@ -120,9 +121,10 @@ public class Player : NetworkBehaviour
             neuronCamera.SetActive(true);
             //mainCamera.SetActive(false);
         }
+        gameObject.GetComponent<NeuronAnimatorInstance>().enabled = true;
+
         Alive = true;
 
-        gameObject.GetComponent<NeuronAnimatorInstance>().enabled = true;
         onToggleShared.Invoke(true);
         /*if (isLocalPlayer)
         {
