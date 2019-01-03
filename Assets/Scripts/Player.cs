@@ -27,10 +27,13 @@ public class Player : NetworkBehaviour
         if (ThisIsTheServerPlayer)
         {
             transform.position = new Vector3(0, 0, 0);
+            transform.eulerAngles = new Vector3(0, 180, 0);
         }
         else
         {
             transform.position = new Vector3(0, 0, 2);
+            transform.eulerAngles = new Vector3(0, 180, 0);
+
         }
         //mainCamera = Camera.main.gameObject;
         //mainCamera = Camera.main.gameObject;
@@ -42,17 +45,18 @@ public class Player : NetworkBehaviour
 
     void DisablePlayer()
     {
-        //if (isLocalPlayer)
-        //{
+        if (isLocalPlayer)
+        {
             GameObject cameraHolder = gameObject.transform.GetChild(1).gameObject;
             GameObject neuronCamera = cameraHolder.transform.GetChild(0).gameObject;
             neuronCamera.SetActive(false);
-            gameObject.GetComponent<NeuronAnimatorInstance>().enabled = false;
             //Transform neuronCameraHolder = transform.Find("Camera Holder");
             //Transform neuronCamera = neuronCameraHolder.Find("Camera");
             //neuronCamera.
             //mainCamera.SetActive(true);
-        //}
+        }
+        gameObject.GetComponent<NeuronAnimatorInstance>().enabled = false;
+
         //gameObject.GetComponent<NeuronAnimatorInstance>().enabled = false;
         onToggleShared.Invoke(false);
         if (isLocalPlayer)
@@ -109,13 +113,13 @@ public class Player : NetworkBehaviour
 
     void ReEnablePlayer()
     {
-        //if (isLocalPlayer)
-        //{
+        if (isLocalPlayer)
+        {
             GameObject cameraHolder = gameObject.transform.GetChild(1).gameObject;
             GameObject neuronCamera = cameraHolder.transform.GetChild(0).gameObject;
             neuronCamera.SetActive(true);
             //mainCamera.SetActive(false);
-        //}
+        }
         Alive = true;
 
         gameObject.GetComponent<NeuronAnimatorInstance>().enabled = true;
@@ -155,10 +159,12 @@ public class Player : NetworkBehaviour
         if (ThisIsTheServerPlayer)
         {
             transform.position = new Vector3(0, 0, 0);
+            transform.eulerAngles = new Vector3(0, 180, 0);
         }
         else
         {
             transform.position = new Vector3(0, 0, 2);
+            transform.eulerAngles = new Vector3(0, 180, 0);
         }
         ReEnablePlayer();
         Debug.Log("Respawn()");
