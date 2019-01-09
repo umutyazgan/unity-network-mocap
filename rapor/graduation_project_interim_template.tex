@@ -333,8 +333,9 @@ satın alınabilir olmamalarına karşın araştırmacı ve üreticiler arasınd
 mevcuttur. Sanal gerçeklik teknolojileri ise, Android cihazlarda kullanılabilecek Google Cardboard
 gibi basit ve ucuz çözümler sayesinde hatırı sayılır bir popülerliğe ulaşmıştır. Bütün bu
 teknolojiler eğlenceye ve tüketime yönelik alanların ötesinde kullanımlara sahiptir. Örneğin
-hareket yakalama teknolojileri film üretiminde ve hasta takibinde[1], sanal gerçeklik ise
-psikolojik tedavi süreçlerinde[2] kullanılabilecek teknolojilerdir.
+hareket yakalama teknolojileri film üretiminde ve hasta takibinde \cite{edseee.660756620130101},
+sanal gerçeklik ise psikolojik tedavi süreçlerinde \cite{edseee.743857520160101} kullanılabilecek
+teknolojilerdir.
 
 Bu projede ise, hareket yakalama ve sanal gerçeklik teknolojilerinin bir arada savaş sanatları
 eğitiminde kullanılması amaçlanmaktadır. Önerilen sistemde; Perception Neuron hareket yakalama
@@ -382,32 +383,33 @@ Yamasaki ve Shimoda bu teknolojilerin EMG analizi ile beraber rehabilitasyon sü
 kullanılması üzerinde bir çalışma yayınlamışlardır. Çalışmalarında, YEI 3-Space hareket yakalama
 cihazı ve Oculus Rift sanal gerçeklik gözlüğü kullanarak ağır travma geçirmiş hastaların
 rehabilitasyon süreçlerini kolaylaştıracak bir oyunu Unity’de geliştirmişlerdir. Oyun oynanırken
-hastanın durumunu takip edebilmek için EMG sinyal analizi kullanılmıştır. [2]    
+hastanın durumunu takip edebilmek için EMG sinyal analizi kullanılmıştır.
+\cite{edseee.743857520160101}
 
 Sanal gerçeklik ve hareket yakalama cihazlarının dans eğitimi için kullanılmasını ise Chan, Leung,
 Tang ve Komura önermiştir. Geliştirdikleri sistemde, sanal gerçeklik ortamında bir dans eğitmeni
 simüle edilmiştir. Bu sanal eğitmen, öğrencilere çeşitli dans hareketleri gösterir ve öğrenciler
 bu hareketleri bir hareket yakalama kıyafeti ile taklit ederler. Bu hareket yakalama kıyafetinden
 gelen veriye bakarak hareketin ne kadar doğru yapıldığını ölçen sanal eğitmen bu sayede öğrenciye
-anında geri bildirimde bulunabilir. [3]
+anında geri bildirimde bulunabilir. \cite{edseee.555784020110101}
 
 Royston, DeFanti ve Perlin ise, geliştirdikleri GraphiteVR isimli yöntem ile Samsung GearVR sanal
 gerçeklik gözlüğü ve Perception Neuron hareket yakalama cihazı kullanarak bir veri görselleme
 sistemi oluşturmuşlardır. Veri görselleme, normalde 3 boyutlu gösterilmesi gereken verilerin iki
 boyutlu ekranlara yansıtılması sebebiyle hep bir sorun olurken, bu sorunu veriyi sanal gerçeklik
 ortamında gösterip, hareket yakalama ile manipule etme imkanı sağlamıştır oluşturdukları sistem.
-[4]
+\cite{royston2016collaborative}
 
 Kameralı bir hareket yakalama sisteminin hasta takibinde kullanılması ise Ye, Ci, Katsaggelos ve
 Liu tarafından önerilmiştir. Çalışmalarında, birden çok kameradan faydalanan bir sistemle hareket
 bir hareket algılama sistemi oluşturularak hastaların hareketliliklerinin otomatik fark
 edilebilmesi sağlanmıştır. Bu sayede, sağlık çalışanları hastanın başında beklemeden de takibini
-yapabileceklerdir. [1]
+yapabileceklerdir. \cite{edseee.660756620130101}
 
 Son olarak bu projenin ilham aldığı bir diğer çalışma ise, Bilgin tarafından geliştirilen Hareket
 Yakalama ile Sanal Gerçeklikte Tenis oyunu projesidir. Bu projede Bilgin, Perception Neuron hareket
 yakalama cihazı ve Samsung GearVR sanal gerçeklik gözlüğünden faydalanan bir tek kişilik tenis
-oyununu Unity oyun motoru kullanarak geliştirmiştir. [5]
+oyununu Unity oyun motoru kullanarak geliştirmiştir. \cite{ebilgin}
 \newpage
 
 \section{Hedeflenen Tasarım ve Gerçeklenen Sistem}
@@ -423,42 +425,44 @@ gerçeklenmesinde kullanılan yazılım metotları ayrıntılı olarak açıklan
 Bu bölümde bu raporda sıkça kullanılacak bazı terimlerin tanımlarına yer verilmiştir. Terimlerin
 çoğunluğu Unity oyun motoru ile ilgilidir.
 
-\textbf{Asset:} Bir Unity projesinde kullanılan her türlü varlığa verilen genel bir isimdir. [6] Bu
-raporda genellikle Unity Asset Store veya Perception Neuron Unity SDK’sı gibi dış kaynaklardan
-edinilmiş parçalardan bahsederken kullanılmıştır. \\
+\textbf{Asset:} Bir Unity projesinde kullanılan her türlü varlığa verilen genel bir isimdir.
+\cite{asset} Bu raporda genellikle Unity Asset Store veya Perception Neuron Unity SDK’sı gibi dış
+kaynaklardan edinilmiş parçalardan bahsederken kullanılmıştır. \\
 \textbf{Collider:} Unity’de bir nesnenin çarpışmalarda yer alabilen kısmına verilen ad. Nesneye bir
-component olarak eklenir ve kapsül, küp veya “mesh” gibi çeşitli şekilleri olabilir. [7] \\
+component olarak eklenir ve kapsül, küp veya “mesh” gibi çeşitli şekilleri olabilir.
+\cite{collider} \\
 \textbf{Component:} Unity’de GameObject’lerin üzerine eklenen ve eklendikleri nesnelere çeşitli
-özellikler katan “parça”lar. Betikler, rigidbody’ler, collider’lar birer component örneğidir. [8]
-\\
+özellikler katan “parça”lar. Betikler, rigidbody’ler, collider’lar birer component örneğidir.
+\cite{component} \\
 \textbf{GameObject:} Unity’de bir sahne içerisindeki nesnelere verilen genel ad. Kendi başlarına
 var olmaktan öte pek bir işlevleri olmamakla birlikte, içlerinde barındırdıkları component’lerle
-birlikte işlevsel bir bütün olurlar. [9] \\
-\textbf{Mesh:} Bir arada belirli bir 3 boyutlu şekil oluşturan bir poligon kümesi. [10] Bu raporda
-genellikle “mesh collider”lardan bahsederken kullanılmıştır. Herhangi bir 3 boyutlu nesne şeklinde
-olabilrmesi için poligonlarla inşa edilmiş colliderlara mesh collider denir. Yine raporda adı geçen
-convex mesh collider’lar ise dış bükey 3 boyutlu şekil oluşturan mesh’ler kullanılarak yapılmış
-collider’lara denir. \\
-\textbf{MonoBehaviour:} Bütün Unity scriptlerinin kalıtıldığı(inherit edildiği) temel sınıf. [11]
-\\
+birlikte işlevsel bir bütün olurlar. \cite{gameobject} \\
+\textbf{Mesh:} Bir arada belirli bir 3 boyutlu şekil oluşturan bir poligon kümesi. \cite{mesh} Bu
+raporda genellikle “mesh collider”lardan bahsederken kullanılmıştır. Herhangi bir 3 boyutlu nesne
+şeklinde olabilrmesi için poligonlarla inşa edilmiş colliderlara mesh collider denir. Yine raporda
+adı geçen convex mesh collider’lar ise dış bükey 3 boyutlu şekil oluşturan mesh’ler kullanılarak
+yapılmış collider’lara denir. \\
+\textbf{MonoBehaviour:} Bütün Unity scriptlerinin kalıtıldığı(inherit edildiği) temel sınıf.
+\cite{monob} \\
 \textbf{NetworkBehaviour:} MonoBehaviour’dan kalıtılmış, MonoBehaviour yerine kullanıldığı zaman
 betik içerisinde Unity’nin ağ özelliklerinin kullanılmasına olanak sağlayan sınıf. \\
 \textbf{Prefab:} Kompleks GameObject’lerin birer kalıp halinde kaydedilip yeni nesnelere iskelet
-olarak tekrar tekrar kullanılmasına olanak sağlayan bir tür asset. [12] \\
+olarak tekrar tekrar kullanılmasına olanak sağlayan bir tür asset. \cite{prefab} \\
 \textbf{Rigidbody:} Bağlı olduğu nesnenin Unity fizik motorundan etkilenmesini sağlayan component.
-[13] \\
+\cite{rigidb} \\
 \textbf{SyncVar:} NetworkBehaviour’dan kalıtılmış betiklerde kullanılabilen, sunucu ve istemciler
-arasında senkronize olan bir değişken türü. [14] \\
+arasında senkronize olan bir değişken türü. \cite{syncv} \\
 
 \subsubsection{Perception Neuron}
 Perception Neuron, Noitom tarafından geliştirilmiş bir giyilebilir hareket yakalama cihazıdır.
 Cihaz, gövde ve uzuvlara yerleştirilen “Neuron” adı verilen sensörler ve bu sensörlerden gelen
-veriyi toplayıp Wi-Fi veya USB aracılığı ile yayınlayan bir merkezden (hub) oluşmaktadır. [15]
-Neuronlar, 3 boyutlu ölçüm yapabilen ivmeölçer, jiroskop ve manyetometre sensörleri içeren aşağı
-yukarı yarım santimetre boyutunda cihazlardır. [5] Perception Neuron, kullanıcının bu Neuron
-sensörlerinden 32 tanesini Şekil \ref{pn}'de görüldüğü gibi vücuduna yerleştirmesine olanak sağlar.
+veriyi toplayıp Wi-Fi veya USB aracılığı ile yayınlayan bir merkezden (hub) oluşmaktadır.
+\cite{mocap} Neuronlar, 3 boyutlu ölçüm yapabilen ivmeölçer, jiroskop ve manyetometre sensörleri
+içeren aşağı yukarı yarım santimetre boyutunda cihazlardır. \cite{ebilgin} Perception Neuron,
+kullanıcının bu Neuron sensörlerinden 32 tanesini Şekil \ref{pn}'de görüldüğü gibi vücuduna
+yerleştirmesine olanak sağlar.
 
-\begin{figure}
+\begin{figure}[hbt!]
     \centering
         \includegraphics[width=6in]{images/pn}
     \caption{Perception Neuron hareket yakalama cihazı ve Cardboard sanal gerçeklik gözlüğü}   
@@ -473,7 +477,7 @@ hareketleri kaydedip Perception Neuron bağlantısı yokken oynatma imkanı suna
 hareket verisini BVH formatında başka yazılım ve donanımların kullanabilmesi için ağ üzerinden
 yayınlayabilmektedir.
 
-\begin{figure}
+\begin{figure}[hbt!]
     \centering
         \includegraphics[width=6in]{images/an}
     \caption{Axis Neuron yazılımı}   
@@ -493,9 +497,9 @@ Google Cardboard; kartondan yapılma, son derece düşük maliyetli, mobil cihaz
 Google’ın geliştirdiği sanal gerçeklik API’si ve SDK’larından faydalanılarak programlanabilen bir
 sanal gerçeklik gözlüğüdür. Gözlüğün yapımı son derece basit olduğu için sayısız üretici tarafından
 çeşitli varyasyonları yapılmaktadır, hatta evde bile yapılması mümkündür. Bu projenin
-geliştirilmesinde de Şekil \ref{cbjpeg}’de gördüğünüz son derece basit gözlük kullanılmıştır.
+geliştirilmesinde de Şekil \ref{cbjpeg}’te gördüğünüz son derece basit gözlük kullanılmıştır.
 
-\begin{figure}
+\begin{figure}[hbt!]
     \centering
         \includegraphics[width=4in]{images/cbjpeg}
     \caption{Projede kullanılan Cardboard sanal gerçeklik gözlüğü}   
@@ -514,9 +518,10 @@ motorudur. 2 boyutlu ve 3 boyutlu oyun, animasyon veya simülasyon geliştirmek 
 içerik üretici tarafından aktif biçimde kullanılmaktadır. Sürükle-bırak formatında araçlarla
 uygulama geliştirmeye olanak sağlayan editör arayüzünün yanı sıra, C\# programlama dilinde
 Unity’nin geliştiricilere sunduğu API’ler yardımıyla kod yazarak uygulama geliştirmek de mümkündür.
-[16] Şekil \ref{u}’de Unity’de projenin geliştirilme sürecinden bir ekran alıntısı görülmektedir.
+\cite{unityg} Şekil \ref{u}'te Unity’de projenin geliştirilme sürecinden bir ekran alıntısı
+görülmektedir.
 
-\begin{figure}
+\begin{figure}[hbt!]
     \centering
         \includegraphics[width=6in]{images/u}
     \caption{Unity'de projenin geliştirilme sürecinden bir görüntü}   
@@ -534,7 +539,7 @@ gerçekleştirilmiştir.
 Projede kullanılan tüm donanım ve yazılımın entegrasyonu için izlenen süreç, Şekil \ref{ent}’te
 verilen akış diyagramında gösterilmiştir.
 
-\begin{figure}
+\begin{figure}[hbt!]
     \centering
         \includegraphics[width=6in]{images/ent}
     \caption{Sistem parçalarının entegrasyonu}
@@ -571,12 +576,12 @@ geliştirilmiş Network Lobby assetinin bir miktar ekleme yapılmış halidir.
 Uygulamada, lobinin DIRECT PLAY başlığı altındaki PLAY AND HOST sekmesi kullanılmaktadır. Bu sekme
 kullanılarak kullanıcılardan biri oyun kurucu (host) rolünü üstlenir. Diğer kullanıcı, oyun kurucu
 olan kullanıcının, aynı ağ üzerindelerse dahili, farklı ağlara bağlı iseler harici IP adresini JOIN
-A GAME kısmındaki kutucuğa yazıp JOIN butonuna tıklayarak lobiye dahil olabilir. Şekil \ref{l1}’de
+A GAME kısmındaki kutucuğa yazıp JOIN butonuna tıklayarak lobiye dahil olabilir. Şekil \ref{l1}’da
 görülen yeni ekranda ise kullanıcılar, bağlanacakları Axis Neuron BVH yayınının IP adresini
 kendilerine ait olan kutucuklara yazıp yanındaki JOIN butonuna tıklarlar. İki kullanıcı da JOIN
 butonuna tıkladıktan sonra 3 saniye içerisinde simulasyon başlar.
 
-\begin{figure}
+\begin{figure}[hbt!]
     \centering
         \includegraphics[width=6in]{images/l1}
     \caption{DIRECT PLAY lobisi, Axis Neuron'un IP adresi girilmiş, yalnızca bir kullanıcı mevcut.}
@@ -600,7 +605,7 @@ Axis Neuron’dan alınan hareketleri izlemektedir.
 Simulasyon alanı, boş bir düzlemden oluşmaktadır. Bu düzlemde kullanıcılar bir başlangıç noktasında
 alana girdikten sonra, kendi avatarlarını vücut hareketlerini takip edecek şekilde yönlendirebilir
 ve birbirleri ile etkileşime geçebilirler. İki avatar mevcutken simulasyon alanının dışarıdan
-görüntüsü Şekil \ref{env}’da görüldüğü gibidir. Simulasyon alanında harici bir nesne bulunmamasına
+görüntüsü Şekil \ref{env}’de görüldüğü gibidir. Simulasyon alanında harici bir nesne bulunmamasına
 karşın, eklenmesi durumunda kullanıcılar çevrelerindeki nesneler ile fiziksel etkileşime(itmek,
 çarpmak vs.) geçebilmektedirler. Kullanıcı avatarının gerçeklenmesi için, Perception Neuron Unity
 SDK’sı tarafından sağlanan sanal gerçeklik uygulamaları için ayarlanmış NeuronRobot\_MultiMesh isimli
@@ -611,7 +616,7 @@ gerçeklenmiş ve avatarın eline simülasyon sırasında kullanabileceği bir k
 fiziksel etkileşim ve oyun mekaniklerinin nasıl çalıştığı ilerleyen kısımlarda daha ayrıntılı
 açıklanacaktır.
 
-\begin{figure}
+\begin{figure}[hbt!]
     \centering
         \includegraphics[width=6in]{images/env}
     \caption{İki avatar ile simulasyon alanı görüntüsü, Unity içerisinde uygulama çalışırken scene
@@ -636,7 +641,7 @@ rigidbody’li ve rigidbody’siz hallerini kullanan avatarlar da farklı prefab
 dosyaları içerisinde mevcuttur (NeuronRobot\_MultiMesh\_sword\_rb ve
 NeuronRobot\_MultiMesh\_sword\_norb).
 
-\begin{figure}
+\begin{figure}[hbt!]
     \centering
         \includegraphics[width=6in]{images/s}
     \caption{Solda: Asset Store'dan edinilip modifiye edilen kılıç. Sağda: Unity içerisinde
@@ -656,7 +661,7 @@ geliştirilecektir.
 Perception Neuron Unity SDK’sı, insan modellerine rigidbody eklemek için Skeleton Tools isimli bir
 araç sunmaktadır. Ancak SDK’nın güncel sürümlerinde aynı aracı collider eklemek için kullanmak
 mümkün değildir. Proje boyunca bu konuda doküman eksikliği sebebiyle sıkıntılar yaşanmıştır.
-Sonunda sorun, insan modeli objesinin uygun çocuk objelerine convex collider’ların Şekil \ref{c}’de
+Sonunda sorun, insan modeli objesinin uygun çocuk objelerine convex collider’ların Şekil \ref{c}’da
 görüldüğü gibi tek tek eklenmesi ile çözülmüş ve kullanıcı avatarının çevresindeki nesneleri
 manipule edebilmesi mümkün kılınmıştır. Bunun bir sonraki aşaması ise, çarpışmaların simulasyon
 içerisindeki kılıç temasında ölme gibi mekaniklerin işlenebilmesi için kullanılması olmuştur. Bu
@@ -673,7 +678,7 @@ değer avatarın canlı olup olmadığını takip ederek, birden fazla eklemle �
 metodunun birden çok kez çağrılmasına engel olur. Şekil \ref{col}’daki şema da bu mekanizmayı
 açıklamaktadır.
 
-\begin{figure}
+\begin{figure}[hbt!]
     \centering
         \includegraphics[width=6in]{images/c}
     \caption{Üzerindeki collider barındıran tüm objeler seçili avatar, seçili objelerin
@@ -681,7 +686,7 @@ açıklamaktadır.
     \label{c}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[hbt!]
     \centering
         \includegraphics[width=6in]{images/col}
     \caption{Çarpışmaların çalışma mekanizması.}
@@ -700,9 +705,9 @@ makinaları üzerinden bağlandığı bir sistem kullanılmıştır. Uygulama i�
 özelliklerinden yalnızca Lobi sahnesinde ve simulasyon içerisinde kullanıcıların doğma ve yeniden
 doğma süreçlerinde faydalanılmıştır. Bunun haricinde uygulamanın geri kalan kısımları, asenkron
 biçimde kullanıcıların kendi lokal makinalarında çalışmaktadır. Bu çalışma prensibi Şekil
-\ref{net}’da basitçe gösterilmiştir.
+\ref{net}’de basitçe gösterilmiştir.
 
-\begin{figure}
+\begin{figure}[hbt!]
     \centering
         \includegraphics[width=6in]{images/net}
     \caption{Kullanıcı hareketlerinin aktarılması. Görüldüğü üzere iki uygulama da iki kullanıcının
@@ -793,7 +798,7 @@ Son olarak da ReEnablePlayer() metodu, simülasyonun başlangıcı için yapılm
 adımları atlamak şartıyla EnablePlayer() metodunun yaptıklarının birebir aynısını yapar: kullanıcı
 kamerası ve NeuronAnimatorInstance betiğini yeniden aktifleştirir.
 
-\begin{figure}
+\begin{figure}[hbt!]
     \centering
         \includegraphics[width=6in]{images/player}
     \caption{Player betiği için akış diyagramı.}
@@ -821,10 +826,10 @@ alanında bulunan değil, doğan (spawn olan) bir nesne olmasıdır.
 Çift tıklama halinde sanal gerçekliğe geçme mekanizması için ise Camera Holder’ın çocuk objesi olan
 kameraya VR Toggle isimli bir betik eklenmiştir. Bu betik basitçe, çift tıklama algıladığı zaman
 kullanılan Unity XR’ın kullandığı sanal gerçeklik SDK’sını “cardboard”dan “None”a (“hiçbiri”ne)
-çevirmektedir. Sanal gerçeklik moduna geçildiğinde oyun içi bir görüntü Şekil \ref{vr}’de
+çevirmektedir. Sanal gerçeklik moduna geçildiğinde oyun içi bir görüntü Şekil \ref{vr}’te
 görülebilir.
 
-\begin{figure}
+\begin{figure}[hbt!]
     \centering
         \includegraphics[width=6in]{images/vr}
     \caption{Sanal gerçeklikle oyun içi bir görüntü. Karşıda görünen avatar herhangi bir Axis        
