@@ -523,7 +523,7 @@ görülmektedir.
 
 \begin{figure}[ht!]
     \centering
-        \includegraphics[width=5.8in]{images/u}
+        \includegraphics[width=5.8in]{images/u2}
     \caption{Unity'de projenin geliştirilme sürecinden bir görüntü}   
     \label{u}
 \end{figure}
@@ -618,35 +618,53 @@ açıklanacaktır.
 
 \begin{figure}[ht!]
     \centering
-        \includegraphics[width=6in]{images/env}
+        \includegraphics[width=6in]{images/env2}
     \caption{İki avatar ile simülasyon alanı görüntüsü, Unity içerisinde uygulama çalışırken scene
              ekranından alınmıştır.}
     \label{env}
 \end{figure}
 
-Avatarın elindeki silah için birden fazla alternatif çözüm denenmiştir. Projenin güncel haline
-kullanılan silah, Unity içerisinde tasarlanmış basit bir eliptik silindirdir ve keskin olması
-gereken kısmında kapsül şeklinde bir collider Şekil \ref{s}’de görüldüğü gibi mevcuttur. Şekil
-\ref{s}’de görülen diğer silah ise, Unity Asset Store’dan edinilmiş ücretsiz bir assetin modifiye
-edilmiş halidir. Bu silahın çelik kısmı, karşıdaki kullanıcının avatarına temas ettiği takdirde
-karşıdaki kullanıcının avatarının ölmesine sebep olması beklenmektedir. Bu sebeple çarpışmaları
-algılaması için üzerine bir mesh collider ve fizik kuvvetlerinden etkilenmesi için bir rigidbody
-eklenmesi gerekmiştir. Ancak, kılıcı tutan avatarın kendisini öldürmesine engel olmak için mesh
-collider’ın yalnızca kılıcın çelik kısmını kapsaması gerekmektedir. Bu amaçla kılıca, tamamını
-kaplayan bir mesh collider yerine, kabzası için tasarlanmış ve yalnızca çelik kısmın etrafını
-kapsayan bir mesh collider eklenmiştir. Rigidbody’nin düzgün çalışabilmesi için bu mesh collider
-convex olarak ayarlanmıştır. Bu silahın şu anda kullanılmamasının sebebi ise rigidbody ile ilgili
-bir problemden kaynaklı olarak simülasyon başladığında silahın aşağı düşmesidir. Bu silahın
-rigidbody’li ve rigidbody’siz hallerini kullanan avatarlar da farklı prefab’ler olarak proje
-dosyaları içerisinde mevcuttur (NeuronRobot\_MultiMesh\_sword\_rb ve
-NeuronRobot\_MultiMesh\_sword\_norb).
+Avatarın elindeki silah için birden fazla alternatif çözüm denenmiştir. Projenin başında kullanılan
+silah, Unity içerisinde tasarlanmış basit bir eliptik silindirdir ve keskin olması gereken kısmında
+kapsül şeklinde bir collider Şekil \ref{s}’de en sağda görüldüğü gibi mevcuttur. Şekil \ref{s}’de
+görülen diğer silah ise, Unity Asset Store’dan edinilmiş ücretsiz bir assetin modifiye edilmiş
+halidir. Bu silahın çelik kısmı, karşıdaki kullanıcının avatarına temas ettiği takdirde karşıdaki
+kullanıcının avatarının ölmesine sebep olması beklenmektedir. Bu sebeple çarpışmaları algılaması
+için üzerine collider ve fizik kuvvetlerinden etkilenmesi için bir rigidbody eklenmesi gerekmiştir.
+Bu aşamada ilk olarak, Şekil \ref{s}’de ortadaki görselde görüldüğü gibi normalde kılıcın kabzası
+için tasarlanmış bir convex mesh collider kullanılması tercih edilmiştir. Ancak bu şekilde eklenen
+collider, avatarın eline temas edip "kesilmesine" sebep olabildiği için, keskin kısmın saptan bir
+miktar daha yukarıda başlaması amacı ile farklı bir collider tasarlanması gerekmiştir. Burada,
+amaca uygun bir mesh collider elde etmek için herhangi bir 3D modelleme yazılımı kullanılması
+yerine, daha basit bir çözüm olarak iki adet basit dikdörtgen şeklinde collider Şekil \ref{s}’de en
+baştaki görselde görüldüğü gibi kullanılmıştır. Bu çözüm, yalnızca keskin kısmın ele çok yakın
+olması problemini çözmekle kalmamış, aynı zamanda kılıcın normalde keskin olmaması gereken arka
+kısmında collider bulunmamasına imkan sağlamıştır. Şu an projenin son halinde bu silah
+kullanılmaktadır.
+
+%Avatarın elindeki silah için birden fazla alternatif çözüm denenmiştir. Projenin güncel haline
+%kullanılan silah, Unity içerisinde tasarlanmış basit bir eliptik silindirdir ve keskin olması
+%gereken kısmında kapsül şeklinde bir collider Şekil \ref{s}’de görüldüğü gibi mevcuttur. Şekil
+%\ref{s}’de görülen diğer silah ise, Unity Asset Store’dan edinilmiş ücretsiz bir assetin modifiye
+%edilmiş halidir. Bu silahın çelik kısmı, karşıdaki kullanıcının avatarına temas ettiği takdirde
+%karşıdaki kullanıcının avatarının ölmesine sebep olması beklenmektedir. Bu sebeple çarpışmaları
+%algılaması için üzerine bir mesh collider ve fizik kuvvetlerinden etkilenmesi için bir rigidbody
+%eklenmesi gerekmiştir. Ancak, kılıcı tutan avatarın kendisini öldürmesine engel olmak için mesh
+%collider’ın yalnızca kılıcın çelik kısmını kapsaması gerekmektedir. Bu amaçla kılıca, tamamını
+%kaplayan bir mesh collider yerine, kabzası için tasarlanmış ve yalnızca çelik kısmın etrafını
+%kapsayan bir mesh collider eklenmiştir. Rigidbody’nin düzgün çalışabilmesi için bu mesh collider
+%convex olarak ayarlanmıştır. Bu silahın şu anda kullanılmamasının sebebi ise rigidbody ile ilgili
+%bir problemden kaynaklı olarak simülasyon başladığında silahın aşağı düşmesidir. Bu silahın
+%rigidbody’li ve rigidbody’siz hallerini kullanan avatarlar da farklı prefab’ler olarak proje
+%dosyaları içerisinde mevcuttur (NeuronRobot\_MultiMesh\_sword\_rb ve
+%NeuronRobot\_MultiMesh\_sword\_norb).
 
 \begin{figure}[ht!]
     \centering
-        \includegraphics[width=6in]{images/s}
-    \caption{Solda: Asset Store'dan edinilip modifiye edilen kılıç. Sağda: Unity içerisinde
-             tasarlanan şu an kullanılan silah. İki görselde de collider'lar yeşil çizgilerle
-             gösterilmiştir.}
+        \includegraphics[width=6in]{images/s2}
+    \caption{Solda: Asset Store'dan edinilip modifiye edilen kılıç ve iki adet basit box(kutu)
+             collider. Ortada: Kabzasının convex mesh collider'ını kullanan kılıç. Sağda: Unity
+             içerisinde tasarlanan silah.}
     \label{s}
 \end{figure}
 
@@ -680,7 +698,7 @@ açıklamaktadır.
 
 \begin{figure}[ht!]
     \centering
-        \includegraphics[width=5in]{images/c}
+        \includegraphics[width=5in]{images/c2}
     \caption{Üzerindeki collider barındıran tüm objeler seçili avatar, seçili objelerin
              colliderları yeşil çizgiler ile gösterilmiştir.}
     \label{c}
@@ -816,27 +834,31 @@ Sanal gerçeklik kısmının gerçeklenmesi için Google Cardboard SDK’sından
 Perception Neuron Unity SDK’sının içinde bulunan sanal gerçeklik örneklerinden faydalanılmıştır.
 Uygulama ilk açıldığı sırada kullanıcının karşısına çıkan lobi ekranı sanal gerçeklik
 kullanmamaktadır. Bunun bir numaralı sebebi, sanal gerçeklik kullanırken IP adresi girmenin
-kullanıcı açısından yaratacağı zorluktur. Simülasyon başladığında ise, kullanıcı telefonunun
-ekranına çift tıklayarak sanal gerçekliği açabilir veya kapatabilir.
+kullanıcı açısından yaratacağı zorluktur. Simülasyon başladığında ise, sanal gerçeklik moduna
+otomatik olarak geçilmektedir.
 
-Sanal gerçeklik için avatarın kafasının yerine kamera yerleştirmek gerekmiştir. Avatarın kafasının
-olmamasının sebebi de budur. Bu kamera, Camera Holder isimli bir GameObject’in çocuk objesi olarak
-ayarlanmıştır. Camera Holder ise, yukarıda bahsedilen sanal gerçeklik örneklerinde kullanılan
-Neuron VR Adapter isimli bir betiğe sahiptir. Bu betik, kameranın bakış açısı olarak telefonun
-yönelişini baz almasını, konum olarak ise avatarın kafasının olması gereken bağlantı noktasını
-takip etmesini sağlar. Örnekten farklı olarak, bu projede Camera Holder bağımsız bir nesne olarak
-değil, avatarın bir çocuk objesi olarak gerçeklenmiştir. Bunun sebebi, avatarın önceden simülasyon
-alanında bulunan değil, doğan (spawn olan) bir nesne olmasıdır.
+Perception Neuron Unity SDK'sı tarafından sağlanan sanal gerçeklik örneğinde kullanılan insan
+modelinin kafası yerine kamera koyulmuştur. Ancak uygulamada kamera hala aynı konumda mevcutken
+modelin kafası tekrar yerine eklendiğinde kullanıcının görüşünde bir sıkıntı olmadığı fark
+edilmiştir. Bu sebeple, kafasıyla beraber bütün bir insan modeli kullanılmıştır. Modelin kafasının
+olduğu konuma aynı zamanda bir kamera mevcuttur. Bu kamera, Camera Holder isimli bir GameObject’in
+çocuk objesi olarak ayarlanmıştır. Camera Holder ise, yukarıda bahsedilen sanal gerçeklik
+örneklerinde kullanılan Neuron VR Adapter isimli bir betiğe sahiptir. Bu betik, kameranın bakış
+açısı olarak telefonun yönelişini baz almasını, konum olarak ise avatarın kafasının bağlı olduğu
+bağlantı noktasını takip etmesini sağlar. Örnekten farklı olarak, bu projede Camera Holder bağımsız
+bir nesne olarak değil, avatarın bir çocuk objesi olarak gerçeklenmiştir. Bunun sebebi, avatarın
+önceden simülasyon alanında bulunan değil, doğan (spawn olan) bir nesne olmasıdır.
 
-Çift tıklama halinde sanal gerçekliğe geçme mekanizması için ise Camera Holder’ın çocuk objesi olan
-kameraya VR Toggle isimli bir betik eklenmiştir. Bu betik basitçe, çift tıklama algıladığı zaman
-kullanılan Unity XR’ın kullandığı sanal gerçeklik SDK’sını “cardboard”dan “None”a (“hiçbiri”ne)
-çevirmektedir. Sanal gerçeklik moduna geçildiğinde oyun içi bir görüntü Şekil \ref{vr}’te
-görülebilir.
+Lobiden sonra sanal gerçekliğe geçme mekanizması için ise Camera Holder’ın çocuk objesi olan
+kameraya VR Toggle isimli bir betik eklenmiştir. Bu betik basitçe, kamera yaratıldığı zaman
+(Start() metodunda)) Unity XR’ın kullandığı sanal gerçeklik SDK’sını "None”dan (“hiçbiri”nden)
+"cardboard”a çevirmektedir. Kamera yokedildiğinde ise (OnDestroy() metodunda) sanal gerçeklik
+modundan SDK'yı tekrar "None"a çevirerek çıkılmasını sağlar. Sanal gerçeklik moduna geçildiğinde
+oyun içi bir görüntü Şekil \ref{vr}’te görülebilir.
 
 \begin{figure}[ht!]
     \centering
-        \includegraphics[width=6in]{images/vr}
+        \includegraphics[width=5in]{images/vr2}
     \caption{Sanal gerçeklikle oyun içi bir görüntü. Karşıda görünen avatar herhangi bir Axis        
              Neuron'a bağlanmamış.}
     \label{vr}
