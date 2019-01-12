@@ -38,6 +38,10 @@ public class Stabbed : MonoBehaviour
         if (collision.gameObject.tag == "weapon" && this.gameObject.tag == "Player" /* gameObject.tag == "flesh" */ )
         {
             Debug.Log("if weapon and player");
+            //Debug.Log(collision.impulse);  // This is probably a better measure
+            Debug.Log(collision.rigidbody.velocity.magnitude);
+            Debug.Log(collision.rigidbody.angularVelocity.magnitude);
+            //Debug.Log(Time.fixedDeltaTime);
             if (player.Alive == true)
             {
                 player.Die();

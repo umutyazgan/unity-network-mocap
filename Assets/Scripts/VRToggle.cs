@@ -28,6 +28,16 @@ public class VRToggle : MonoBehaviour {
         return false;
     }
 
+    void Start()
+    {
+        ToggleVR();
+    }
+
+    void OnDestroy()
+    {
+        ToggleVR();
+    }
+    /*
     void Update () {
         // Why toggle VR in doubletap? Why not just enable it in Start() method of this script?
         if (DoubleClick())
@@ -37,7 +47,7 @@ public class VRToggle : MonoBehaviour {
             //InputTracking.Recenter();
         }
     }
-
+    */
     void ToggleVR()
     {
         if (XRSettings.loadedDeviceName == "cardboard")
