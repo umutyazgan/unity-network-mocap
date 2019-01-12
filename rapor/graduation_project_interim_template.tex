@@ -462,7 +462,7 @@ içeren aşağı yukarı yarım santimetre boyutunda cihazlardır. \cite{ebilgin
 kullanıcının bu Neuron sensörlerinden 32 tanesini Şekil \ref{pn}'de görüldüğü gibi vücuduna
 yerleştirmesine olanak sağlar.
 
-\begin{figure}[hbt!]
+\begin{figure}[ht!]
     \centering
         \includegraphics[width=6in]{images/pn}
     \caption{Perception Neuron hareket yakalama cihazı ve Cardboard sanal gerçeklik gözlüğü}   
@@ -477,7 +477,7 @@ hareketleri kaydedip Perception Neuron bağlantısı yokken oynatma imkanı suna
 hareket verisini BVH formatında başka yazılım ve donanımların kullanabilmesi için ağ üzerinden
 yayınlayabilmektedir.
 
-\begin{figure}[hbt!]
+\begin{figure}[ht!]
     \centering
         \includegraphics[width=6in]{images/an}
     \caption{Axis Neuron yazılımı}   
@@ -499,7 +499,7 @@ sanal gerçeklik gözlüğüdür. Gözlüğün yapımı son derece basit olduğu
 çeşitli varyasyonları yapılmaktadır, hatta evde bile yapılması mümkündür. Bu projenin
 geliştirilmesinde de Şekil \ref{cbjpeg}’te gördüğünüz son derece basit gözlük kullanılmıştır.
 
-\begin{figure}[hbt!]
+\begin{figure}[ht!]
     \centering
         \includegraphics[width=4in]{images/cbjpeg}
     \caption{Projede kullanılan Cardboard sanal gerçeklik gözlüğü}   
@@ -521,9 +521,9 @@ Unity’nin geliştiricilere sunduğu API’ler yardımıyla kod yazarak uygulam
 \cite{unityg} Şekil \ref{u}'te Unity’de projenin geliştirilme sürecinden bir ekran alıntısı
 görülmektedir.
 
-\begin{figure}[hbt!]
+\begin{figure}[ht!]
     \centering
-        \includegraphics[width=6in]{images/u}
+        \includegraphics[width=5.8in]{images/u}
     \caption{Unity'de projenin geliştirilme sürecinden bir görüntü}   
     \label{u}
 \end{figure}
@@ -539,7 +539,7 @@ gerçekleştirilmiştir.
 Projede kullanılan tüm donanım ve yazılımın entegrasyonu için izlenen süreç, Şekil \ref{ent}’te
 verilen akış diyagramında gösterilmiştir.
 
-\begin{figure}[hbt!]
+\begin{figure}[ht!]
     \centering
         \includegraphics[width=6in]{images/ent}
     \caption{Sistem parçalarının entegrasyonu}
@@ -579,9 +579,9 @@ olan kullanıcının, aynı ağ üzerindelerse dahili, farklı ağlara bağlı i
 A GAME kısmındaki kutucuğa yazıp JOIN butonuna tıklayarak lobiye dahil olabilir. Şekil \ref{l1}’da
 görülen yeni ekranda ise kullanıcılar, bağlanacakları Axis Neuron BVH yayınının IP adresini
 kendilerine ait olan kutucuklara yazıp yanındaki JOIN butonuna tıklarlar. İki kullanıcı da JOIN
-butonuna tıkladıktan sonra 3 saniye içerisinde simulasyon başlar.
+butonuna tıkladıktan sonra 3 saniye içerisinde simülasyon başlar.
 
-\begin{figure}[hbt!]
+\begin{figure}[ht!]
     \centering
         \includegraphics[width=6in]{images/l1}
     \caption{DIRECT PLAY lobisi, Axis Neuron'un IP adresi girilmiş, yalnızca bir kullanıcı mevcut.}
@@ -589,23 +589,23 @@ butonuna tıkladıktan sonra 3 saniye içerisinde simulasyon başlar.
 \end{figure}
 
 Lobinin işlevsel kısmını oluşturan LobbyManager objesi üzerinde bir Lobby Manager betiği mevcuttur.
-Bu betiğin parametreleri modifiye edilerek simulasyon başladığı zaman kullanıcılar için simulasyon
+Bu betiğin parametreleri modifiye edilerek simülasyon başladığı zaman kullanıcılar için simülasyon
 ortamına çağırılacak model olarak istenen modelin prefab’i verilebilir ve simülasyon ortamı olarak
 da istenen sahne sunulabilir. Kullanıcıların girdiği IP adreslerinde yayın yapan Axis Neuron’a
 bağlanabilmeleri için bu LobbyManager objesine NetworkLobbyHook isimli bir betik eklenmiştir. Bu
-betik içerisinde, lobi sahnesinden simulasyon ortamına geçiş yaparken çağrılacak modeller/prefab’ler
+betik içerisinde, lobi sahnesinden simülasyon ortamına geçiş yaparken çağrılacak modeller/prefab’ler
 üzerinde, lobi sırasında mevcut bilgiler kullanılarak değişiklik yapılabilmektedir. Betik, lobi
 ekranında girilen IP adreslerinin alınıp, kullanıcı avatarını oluşturan objenin/modelin üzerindeki
 NeuronAnimatorInstance betiğindeki Address değişkeninin üzerine yazmak için kullanılmaktadır. Bu
 sayede kullanıcılar simülasyona girdikleri zaman avatarları, lobideki girdikleri adrese yayın yapan
 Axis Neuron’dan alınan hareketleri izlemektedir.
 
-\subsubsection{Simulasyon Çevresi}
+\subsubsection{Simülasyon Çevresi}
 
-Simulasyon alanı, boş bir düzlemden oluşmaktadır. Bu düzlemde kullanıcılar bir başlangıç noktasında
+Simülasyon alanı, boş bir düzlemden oluşmaktadır. Bu düzlemde kullanıcılar bir başlangıç noktasında
 alana girdikten sonra, kendi avatarlarını vücut hareketlerini takip edecek şekilde yönlendirebilir
-ve birbirleri ile etkileşime geçebilirler. İki avatar mevcutken simulasyon alanının dışarıdan
-görüntüsü Şekil \ref{env}’de görüldüğü gibidir. Simulasyon alanında harici bir nesne bulunmamasına
+ve birbirleri ile etkileşime geçebilirler. İki avatar mevcutken simülasyon alanının dışarıdan
+görüntüsü Şekil \ref{env}’de görüldüğü gibidir. Simülasyon alanında harici bir nesne bulunmamasına
 karşın, eklenmesi durumunda kullanıcılar çevrelerindeki nesneler ile fiziksel etkileşime(itmek,
 çarpmak vs.) geçebilmektedirler. Kullanıcı avatarının gerçeklenmesi için, Perception Neuron Unity
 SDK’sı tarafından sağlanan sanal gerçeklik uygulamaları için ayarlanmış NeuronRobot\_MultiMesh isimli
@@ -616,10 +616,10 @@ gerçeklenmiş ve avatarın eline simülasyon sırasında kullanabileceği bir k
 fiziksel etkileşim ve oyun mekaniklerinin nasıl çalıştığı ilerleyen kısımlarda daha ayrıntılı
 açıklanacaktır.
 
-\begin{figure}[hbt!]
+\begin{figure}[ht!]
     \centering
         \includegraphics[width=6in]{images/env}
-    \caption{İki avatar ile simulasyon alanı görüntüsü, Unity içerisinde uygulama çalışırken scene
+    \caption{İki avatar ile simülasyon alanı görüntüsü, Unity içerisinde uygulama çalışırken scene
              ekranından alınmıştır.}
     \label{env}
 \end{figure}
@@ -636,12 +636,12 @@ collider’ın yalnızca kılıcın çelik kısmını kapsaması gerekmektedir. 
 kaplayan bir mesh collider yerine, kabzası için tasarlanmış ve yalnızca çelik kısmın etrafını
 kapsayan bir mesh collider eklenmiştir. Rigidbody’nin düzgün çalışabilmesi için bu mesh collider
 convex olarak ayarlanmıştır. Bu silahın şu anda kullanılmamasının sebebi ise rigidbody ile ilgili
-bir problemden kaynaklı olarak simulasyon başladığında silahın aşağı düşmesidir. Bu silahın
+bir problemden kaynaklı olarak simülasyon başladığında silahın aşağı düşmesidir. Bu silahın
 rigidbody’li ve rigidbody’siz hallerini kullanan avatarlar da farklı prefab’ler olarak proje
 dosyaları içerisinde mevcuttur (NeuronRobot\_MultiMesh\_sword\_rb ve
 NeuronRobot\_MultiMesh\_sword\_norb).
 
-\begin{figure}[hbt!]
+\begin{figure}[ht!]
     \centering
         \includegraphics[width=6in]{images/s}
     \caption{Solda: Asset Store'dan edinilip modifiye edilen kılıç. Sağda: Unity içerisinde
@@ -663,7 +663,7 @@ araç sunmaktadır. Ancak SDK’nın güncel sürümlerinde aynı aracı collide
 mümkün değildir. Proje boyunca bu konuda doküman eksikliği sebebiyle sıkıntılar yaşanmıştır.
 Sonunda sorun, insan modeli objesinin uygun çocuk objelerine convex collider’ların Şekil \ref{c}’da
 görüldüğü gibi tek tek eklenmesi ile çözülmüş ve kullanıcı avatarının çevresindeki nesneleri
-manipule edebilmesi mümkün kılınmıştır. Bunun bir sonraki aşaması ise, çarpışmaların simulasyon
+manipule edebilmesi mümkün kılınmıştır. Bunun bir sonraki aşaması ise, çarpışmaların simülasyon
 içerisindeki kılıç temasında ölme gibi mekaniklerin işlenebilmesi için kullanılması olmuştur. Bu
 aşamada yaşanan önemli bir sorun, Unity’nin çarpışma algılama mekanizması sebebiyle collider’lar
 tarafından algılanan çarpışmaların obje hiyerarşisinde içinde rigidbody barındıran en yakın
@@ -678,15 +678,15 @@ değer avatarın canlı olup olmadığını takip ederek, birden fazla eklemle �
 metodunun birden çok kez çağrılmasına engel olur. Şekil \ref{col}’daki şema da bu mekanizmayı
 açıklamaktadır.
 
-\begin{figure}[hbt!]
+\begin{figure}[ht!]
     \centering
-        \includegraphics[width=6in]{images/c}
+        \includegraphics[width=5in]{images/c}
     \caption{Üzerindeki collider barındıran tüm objeler seçili avatar, seçili objelerin
              colliderları yeşil çizgiler ile gösterilmiştir.}
     \label{c}
 \end{figure}
 
-\begin{figure}[hbt!]
+\begin{figure}[ht!]
     \centering
         \includegraphics[width=6in]{images/col}
     \caption{Çarpışmaların çalışma mekanizması.}
@@ -702,12 +702,12 @@ planlanmıştır. Ancak ilerleyen kısımlarda bu yapıdan vaz geçilip, bunun y
 verilerinin aktarıldığı, bunun da Unity’nin sunduğu ağ özelliklerinden faydalanmak yerine Axis
 Neuron’lardan yayınlanan hareket verilerine iki kullanıcının da direkt olarak kendi yerel
 makinaları üzerinden bağlandığı bir sistem kullanılmıştır. Uygulama içerisinde Unity’nin ağ
-özelliklerinden yalnızca Lobi sahnesinde ve simulasyon içerisinde kullanıcıların doğma ve yeniden
+özelliklerinden yalnızca Lobi sahnesinde ve simülasyon içerisinde kullanıcıların doğma ve yeniden
 doğma süreçlerinde faydalanılmıştır. Bunun haricinde uygulamanın geri kalan kısımları, asenkron
 biçimde kullanıcıların kendi lokal makinalarında çalışmaktadır. Bu çalışma prensibi Şekil
 \ref{net}’de basitçe gösterilmiştir.
 
-\begin{figure}[hbt!]
+\begin{figure}[ht!]
     \centering
         \includegraphics[width=6in]{images/net}
     \caption{Kullanıcı hareketlerinin aktarılması. Görüldüğü üzere iki uygulama da iki kullanıcının
@@ -735,7 +735,7 @@ Perception Neuron’dan alınan verilerin ağ üzerinden aktarılması, iki kull
 cihazdaki asenkron çalışan örneklerinin ikisinde de avatarlarına bağlı olan NeuronAnimatorInstance
 betiklerindeki address değişkeninin kendi Axis Neuron’larının yayın yaptığı adresi tutması ile
 mümkün kılınmıştır. Bu da yukarıda Lobi bölümünde de anlatıldığı gibi, Lobi ekranında girilen
-adresin çekilip simulasyon ekranına geçiş aşamasında oluşan kullanıcıya ait avatara aktarılması ile
+adresin çekilip simülasyon ekranına geçiş aşamasında oluşan kullanıcıya ait avatara aktarılması ile
 sağlanmıştır. Söz konusu betik Perception Neuron Unity SDK’sı tarafından sağlanmış olmasına karşın,
 bu şekilde çalışabilmesi (iki kullanıcı için ayrı address değerleri tutabilmesi) için bu script
 içerisinde tanımlanan NeuronAnimatorInstance sınıfının temel aldığı (kalıtıldığı/inherit edildiği)
@@ -747,13 +747,13 @@ Bunun haricinde ağ kullanan özellikler, kullanıcı avatarlarına ait mekanikl
 isimli betik içerisindeki başlama ve ölünce yeniden doğmayı kontrol eden Start() ve Respawn()
 metotları ile kameraların aktive edildiği EnablePlayer() metodlarıdır. Bu metotlarda kullanıcının
 sunucu veya istemci olmasına bağlı olarak (her ne kadar tam olarak bir sunucu-istemci sistemi
-kullanılmasa da Unity için kullanıcılardan biri sunucu diğeri istemcidir) simulasyon alanında
+kullanılmasa da Unity için kullanıcılardan biri sunucu diğeri istemcidir) simülasyon alanında
 doğacakları nokta belirlenir ve iki avatardan sadece o anda kontrol edilenin kamerası
 aktifleştirilir.
 
 \subsubsection{Simülasyon Akışı ve Mekanikler}
 
-Bu kısımda simulasyon sahnesine geçildikten sonra uygulamanın çalışma akışı ve mekanikleri
+Bu kısımda simülasyon sahnesine geçildikten sonra uygulamanın çalışma akışı ve mekanikleri
 açıklanmıştır.
 
 Simülasyonun kullanıcılar için akışını, iki kullanıcının da avatarına eklenmiş olan Player isimli
@@ -772,7 +772,7 @@ NeuronAnimatorInstance betiği aktive edilir ve Axis Neuron ile bağlantısı ku
 Simülasyon bu şekilde başlar ve kullanıcılar avatarlarını kontrol ederek ellerindeki kılıçlar
 yardımıyla birbirlerine karşı hamle yapabilirler. Kılıçların oyunculara temas edip etmediği ise,
 üzerinde rigidbody bulunan tüm vücut parçalarına eklenmiş olan Stabbed betiği ile kontrol edilir.
-Simulasyon içerisinde yalnızca kılıçlar “weapon” olarak etiketlenmiştir, oyuncu avatarlarının tüm
+Simülasyon içerisinde yalnızca kılıçlar “weapon” olarak etiketlenmiştir, oyuncu avatarlarının tüm
 parçaları ise “Player” olarak etiketlenmiştir. Stabbed scripti, bağlı olduğu nesne “Player”
 etiketine ve çarptığı nesne “weapon” etiketine sahipse çalışır, ve kendisinin bağlı olduğu nesnenin
 en üst atası (root) olan kullanıcıya bağlı Player betiği içerisinde yer alan Die() metodunu
@@ -797,13 +797,18 @@ ayarlar ve ReEnablePlayer() metodunu çağırır.
 Son olarak da ReEnablePlayer() metodu, simülasyonun başlangıcı için yapılması gereken bazı ekstra
 adımları atlamak şartıyla EnablePlayer() metodunun yaptıklarının birebir aynısını yapar: kullanıcı
 kamerası ve NeuronAnimatorInstance betiğini yeniden aktifleştirir.
+\newpage
+\vfill
 
-\begin{figure}[hbt!]
+\begin{figure}[ht!]
     \centering
         \includegraphics[width=6in]{images/player}
     \caption{Player betiği için akış diyagramı.}
     \label{player}
 \end{figure}
+
+\vfill
+\clearpage
 
 \subsubsection{Sanal Gerçeklik}
 
@@ -811,7 +816,7 @@ Sanal gerçeklik kısmının gerçeklenmesi için Google Cardboard SDK’sından
 Perception Neuron Unity SDK’sının içinde bulunan sanal gerçeklik örneklerinden faydalanılmıştır.
 Uygulama ilk açıldığı sırada kullanıcının karşısına çıkan lobi ekranı sanal gerçeklik
 kullanmamaktadır. Bunun bir numaralı sebebi, sanal gerçeklik kullanırken IP adresi girmenin
-kullanıcı açısından yaratacağı zorluktur. Simulasyon başladığında ise, kullanıcı telefonunun
+kullanıcı açısından yaratacağı zorluktur. Simülasyon başladığında ise, kullanıcı telefonunun
 ekranına çift tıklayarak sanal gerçekliği açabilir veya kapatabilir.
 
 Sanal gerçeklik için avatarın kafasının yerine kamera yerleştirmek gerekmiştir. Avatarın kafasının
@@ -820,7 +825,7 @@ ayarlanmıştır. Camera Holder ise, yukarıda bahsedilen sanal gerçeklik örne
 Neuron VR Adapter isimli bir betiğe sahiptir. Bu betik, kameranın bakış açısı olarak telefonun
 yönelişini baz almasını, konum olarak ise avatarın kafasının olması gereken bağlantı noktasını
 takip etmesini sağlar. Örnekten farklı olarak, bu projede Camera Holder bağımsız bir nesne olarak
-değil, avatarın bir çocuk objesi olarak gerçeklenmiştir. Bunun sebebi, avatarın önceden simulasyon
+değil, avatarın bir çocuk objesi olarak gerçeklenmiştir. Bunun sebebi, avatarın önceden simülasyon
 alanında bulunan değil, doğan (spawn olan) bir nesne olmasıdır.
 
 Çift tıklama halinde sanal gerçekliğe geçme mekanizması için ise Camera Holder’ın çocuk objesi olan
@@ -829,7 +834,7 @@ kullanılan Unity XR’ın kullandığı sanal gerçeklik SDK’sını “cardbo
 çevirmektedir. Sanal gerçeklik moduna geçildiğinde oyun içi bir görüntü Şekil \ref{vr}’te
 görülebilir.
 
-\begin{figure}[hbt!]
+\begin{figure}[ht!]
     \centering
         \includegraphics[width=6in]{images/vr}
     \caption{Sanal gerçeklikle oyun içi bir görüntü. Karşıda görünen avatar herhangi bir Axis        
@@ -894,9 +899,9 @@ birlikte yapılması gerekecek fiziksel aktivitelere çok sayıda uygulamaya ala
 \section{Sonuç ve Gelecek Çalışmalar}
 \tolerance=6000
 Bu projede iki kişinin ayrı konumlardan bağlanıp karşılıklı olarak çalışabileceği bir savaş
-sanatları simulasyonu yapılması amaçlanmıştır. Şimdilik, projenin kapsamı genel bir savaş sanatları
+sanatları simülasyonu yapılması amaçlanmıştır. Şimdilik, projenin kapsamı genel bir savaş sanatları
 simülasyonundan ziyade, kılıç dövüşü ile kısıtlı tutulmuştur. Amaç, iki kişinin karşılıklı olarak
-gerçekçi bir simulasyon ortamının içerisinde normal koşullarda gerçek silahlarla çalışamayacakları
+gerçekçi bir simülasyon ortamının içerisinde normal koşullarda gerçek silahlarla çalışamayacakları
 biçimde kılıçla mücadele tekniklerini çalışabilmeleridir. Sonuç olarak elde edilen üründe bu amaç
 gerçeklenmiştir. Elbette düzeltilebilecek, ek yapılabilecek, eniyilenebilecek çok sayıda noktası
 olmakla beraber; bütün bunların üzerine inşa edilebileceği sağlam bir temel oluşturulmuştur.
