@@ -9,14 +9,20 @@ public class NeuronVRAdapter : NetworkBehaviour
 	public Transform 			hipsTransform = null;
 	public bool					alignToHipRotation = true;
 
-	void OnPreCull()
+    void Start()
+    {
+        transform.rotation = bindTransform.rotation;
+    }
+
+    void OnPreCull()
 	{
 		// Re-Position the camera to our head bind Target
 		transform.position = bindTransform.position;
-	}
-    
+        //UnityEngine.XR.InputTracking.Recenter ();
+    }
 
-	void Update( )
+
+    void Update( )
     {        
 		// Re-Position the camera to our head bind Target
 		if (bindTransform != null) 

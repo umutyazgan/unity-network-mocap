@@ -104,12 +104,16 @@ public class Player : NetworkBehaviour
         }
         gameObject.GetComponent<NeuronAnimatorInstance>().connectToAxis = false;
 
-        Invoke("HorribleFix", 0.5f);
+        Invoke("HorribleFix", 1f);
     }
 
     void HorribleFix()
     {
         gameObject.GetComponent<NeuronAnimatorInstance>().connectToAxis = true;
+        if (gameObject.GetComponent<NeuronAnimatorInstance>().enabled == false)
+        {
+            gameObject.GetComponent<NeuronAnimatorInstance>().enabled = true;
+        }
     }
 
     void ReEnablePlayer()
