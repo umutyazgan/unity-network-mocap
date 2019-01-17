@@ -199,7 +199,7 @@
         %\large{Department: Computer Engineering} \\
         \large{Bölüm: Bilgisayar Mühendisliği } \\
         \vspace{1cm}
-        \large{Danışman: Asst. Prof. Dr. Gökhan İnce} \\
+        \large{Danışman: Yrd. Doç. Dr. Gökhan İnce} \\
         \vspace{\fill} % Fill out until the page end
         \large{\normalfont \sffamily \theturkishdate}
     \end{center}
@@ -243,8 +243,15 @@ Burada ilan ediyorum ki bu çalışmada,
 İstanbul, \theturkishdate
 \vspace{3em}\\ \theauthor
 
-%\newpage
-%\section*{Acknowledgments}
+\newpage
+\section*{Teşekkürler}
+\tolerance=500
+Öncelikli olarak, danışmanım Yrd. Doç. Dr. Gökhan İnce'ye dönem boyunca bana verdiği destek ve
+yönlendirmeler için teşekkür etmek istiyorum. Dönem boyunca bana desteğini esirgemeyen aileme ve
+Pelin Döloğlu'na teşekkür ederim. Uygulamayı geliştirme aşamasında benden yardımını hiç bir şekilde
+esirgemeyen Tolga Şen'e teşekkür ederim. Son olarak da, test süreci boyunca bana yardımcı olan
+dostlarıma, özellikle de İTÜ Aikido Dojosu'ndan dostlarım Recep Aksoy ve Faruk Ergünay'a teşekkürü
+borç bilirim.
 
 \newpage
 \section*{\centering\theturkishtitle}
@@ -870,51 +877,78 @@ oyun içi bir görüntü Şekil \ref{vr}’te görülebilir.
 
 \newpage
 \section{Test Ortamı ve Testler}
-Bu proje için yapılması planlanan testler, test ekipmanı (ikinci Perception Neuron) eksikliği ve
-zaman darlığı sebepleriyle tamamlanamamıştır. Tek Perception Neuron ve kaydedilmiş hareketleri
-oynatan ikinci bir Axis Neuron yazılımı ile temel fonksiyonların çalışıp çalışmadığını anlamak için
-bir takım testler yapılmıştır.
+Gerçekleştirilen testlerde geliştirilen sistem üç aikido sporcusuna denetilmiştir. Deneklerden
+ikisi ileri seviye öğrenci, diğeri ise asistan eğitmendir. Bu aşamaya kadar sistem daha önce iki
+mobil cihaz arasında hareket yakalama sistemleri ile birlikte denenmediği için, bu deney süreci hem
+deney hem de hata ayıklama süreci olarak işlev görmüştür. Sistemdeki çok sayıda daha önceki
+testlerde fark edilmemiş hata bu süreçte düzeltilmiştir.
 
 \subsection{Test Ortamı}
-Planlanan testlerde test ortamının şu şekilde olması beklenmekteydi: İki adet Perception Neuron,
-her birine Wi-Fi ile bağlı Axis Neuron çalıştıran birer bilgisayar, bu Axis Neuron’lara bağlanan
-iki adet Android telefon, bu telefonlarla kullanılmak üzere sanal gerçeklik gözlükleri ve yeterli
-hareket özgürlüğünü sağlayacak kadar açık alan. Testler daha önce savaş sanatları üzerine tecrübesi
-olan ve olmayan kullanıcıların ayrıca değerlendirmelerini toplayacak şekilde planlanmıştı.
+Testler, üç denek ile kapalı bir mekanda gerçekleştirilmiştir. Öncesinde bir oda içerisinde, ardından
+daha geniş bir koridorda test edilmiştir sistem. Denekler ikili gruplar halinde sistemi denemişlerdir.
+İki adet Perception Neuron hareket yakalama cihazı ve biri Cardboard diğeri ise Freefly VR olmak üzere
+iki adet sanal gerçeklik gözlüğü kullanılmıştır. Deneyler, iki telefon aynı Wi-Fi ağına bağlı iken
+gerçekleştirilmişlerdir. Bir mobil cihazın taşınabilir Wi-Fi hotspot özelliği kullanılmış ve testler
+3G ve LTE bantları üzerinde gerçekleştirilmiştir. Uygulama, Sony Xperia Z5 Compact ve Samsung Galaxy
+S4 akıllı telefonlarında Android 5.1 ve 7.1 işletim sistemleri üzerinde denenmiştir.
 
-Şu ana kadar tek cihazla yapılması mümkün olmuş testlerin kapsamı ise performans
-değerlendirmesinden ziyade hatların tespiti üzerine olmuştur. Kılıçla yapılan basit bir kesiş
-tekniği önceden kaydedilmiş ve bir Axis Neuron’da oynatılmıştır. Sunucu, hata ayıklamayı
-kolaylaştırmak adına bir dizüstü bilgisayarda çalışan Unity içerisinde çalıştırılmıştır. Perception
-Neuron, Cardboard ve bir Android telefon kullanan tek bir kullanıcı ise bu sürekli aynı kesiş
-hareketini yapan “kullanıcı”nın karşısına geçmiştir.
+Test ve hata ayıklama süreçleri birlikte yürütülmüştür. Deneklerin dahil olduğu iki günlük süre boyunca
+sürekli olarak sistem test edilmiş, bulunan hatalar düzeltilmiş ve tekrar test edilmiştir.
 
 \subsection{Testler}
-Yapılması planlanan testler, savaş sanatlarında farklı düzeyde tecrübeye sahip insanlara uygulamayı
-kullandırıp; kullanım kolaylığı, eğitime getirebileceği kolaylıklar, gecikme ve hataların ne kadar
-dikkat çektiği gibi çeşitli konularda deneklere anket yapmak şeklindeydi. Bu testler de en yakın
-zamanda gerçekleştirilecektir.
+Testler sırasında öğrencilerden biri, sırasıyla diğer öğrenci ve eğitmenle karşılıklı olarak simülasyona
+girmiştir. İki kişi karşılıklı mücadele etmeye çalışmıştır.
 
-Şu ana dek gerçekleştirilen tek kullanıcılı testlerde ise yazılımın genel çalışmasında hata olup
-olmadığı kontrol edilmiştir. Sistemin güvenilirliğinin şu aşamada tatmin edici olmadığı
-söylenebilir. İstikrarlı olmayan, çok defa çalıştırıldığında bir kaç defa rastlanan bazı hatalar
-mevcut. Bu hatalar genellikle Axis Neuron ile avatarlardan birinin ilk bağlantıyı kuramaması
-şeklinde göstermektedir kendisini. Hataların etrafından dolanmak için kimi yöntemler geliştirilmiş
-olmakla birlikte, daha kapsamlı testler yapıp daha geniş kapsamlı bir hata ayıklama sürecinin
-yürütülmesinin ciddi miktarda faydası olacaktır.
+Testler sırasında sistemde hala düzeltilmesi gereken hatalar olmakla birlikte, genel olarak başarılı
+olduğu ortaya konmuştur. Denekler sistemi iki gün boyunca test etmiş ve sonunda on soruluk bir ankete
+cevap vermişlerdir. Sonuçlar sistemin hala geliştirilmesi gerektiğini ancak ileride savaş sanatları
+eğitiminin bir parçası olmak için umut vadettiğini ortaya koymuştur.
 
-Yapılan testlerde simülasyon kullanıcının fark edebileceği düzeyde bir gecikme tespit edilmemiştir.
-Simülasyonun iki ayrı cihazda çalışan örnekleri yapılan testlerde tamamen eş zamanlı hareket
-etmişlerdir.
+Testler iki cihaz aynı ağa bağlıyken sistemdeki gecikme miktarının ihmal edilebilir düzeyde olduğunu
+da göstermiştir.
 
-Kullanılabilirlik konusunda ise kimi sıkıntılar olduğu aşikardır. Kılıcın ele sabitlenmiş olması,
-özellikle eldeki Neuron sensörünün kalibrasyonunda bir kayma olduğu zaman kılıcın kontrolünü
+Testler sırasında ortaya çıkan ve düzeltilmesi gereken önemli sorunlardan biri, hareket yakalama
+cihazından gelen vücut doğrultusu bilgisi ile akıllı telefonun jiroskopundan gelen kafa doğrultusu
+verisi arasındaki uyumsuzluktur. Her bir kaç denemede bir, kullanıcılardan birinin simülasyonda gördüğü
+alan ile vücudunun baktığı doğrultunun uyumsuz olduğu gözlemlenmiştir.
+
+Kullanılabilirlik konusunda ise, kılıcın ele sabitlenmiş olması,
+özellikle eldeki sensörlerin kalibrasyonunda bir kayma olduğu zaman kılıcın kontrolünü
 zorlaştırmaktadır. Bununla ilgili çözüm önerileri ileride tartışılacaktır.
+
+Testlerin sonunda deneklerin ikisine on soruluk bir anket yapılmıştır. Ankette sistem ile iligli kimi
+tespitlerde bulunulmuştur ve katılımcılardan 1 "Kesinlikle Katılmıyorum" ve 5 "Kesinlikle Katılıyorum"
+anlamına gelmek üzere tespitlere 1-5 arasında puan vermeleri istenmiştir. Tespit, sistem
+kullanabilirliği ölçütü (SUS) anketlerine benzer şekilde bir olumlu bir olumsuz olarak hazırlanmıştır.
+Sonunda verilen cevaplar üzerinden standart sistem kullanabilirliği ölçütü kullanılarak bir puan
+hesaplanmıştır. Ankette sunulan tespitler şu şekildedir:
+
+\begin{itemize}
+    \item Simülasyon yeterince gerçekçiydi
+    \item Karakterimi kontrol etmek zordu
+    \item Tepki süreleri kısa ve gecikme azdı
+    \item Uygulamayı kullanmaya başlamak çok zahmetliydi
+    \item Uygulamayı kullanırken çok keyif aldım
+    \item Uygulamayı kullanabilmek için ciddi miktarda teknik bilgiye ihtiyaç duydum
+    \item Bu sistemin savaş sanatları eğitiminde (öğrenci veya eğitmen olarak) kullanılmasının faydalı olacağını düşünüyorum
+    \item Bu sistemin işe yarar bir alternatif antrenman yöntemi olarak kullanılamayacağını düşünüyorum
+    \item İmkanım olsa bu sistemi sıkça kullanırdım
+    \item Uygulamanın çalışmasında ciddi tutarsızlıklar vardı
+\end{itemize}
+
+Her tespitin anket sonucuna göre puan katkısı hesaplanmıştır. Olumsuz tespitler için puan katkısı
+"5 - ortalama puan" şeklinde, olumlular için ise "ortalama puan - 1" şeklinde hesaplanmıştır. Sonuç
+olarak elde edilen puan katkıları toplanıp 2,5 ile çarpıldığında ise sonuç puanına ulaşılmıştır: 77,5.
+Bu puan, sistem kullanılabilirliği ölçütüne göre "iyi" sınıfına girmektedir.
+
 
 \newpage
 \section{Kıyaslamalı Değerlendirme ve Tartışma}
-Eldeki test sonuçlarının yetersizliğinden ötürü, kıyaslamalı bir değerlendirme yapacak pek fazla
-nicel veri bulunmamaktadır. Ancak, bu projenin ilham kaynaklarından biri olan, Hareket Yakalama ile
+Önceki çalışmalara kıyasla, bir ağ yapısının kullanılması, sitemin karmaşıklığını arttırmış ve
+hataların çözülmesini daha zor hale getirmiştir. Buna rağmen, bir konseptin ispatı olarak başarılı
+bir sistem elde edilmiştir.
+
+Bu projenin ilham kaynaklarından biri olan, Hareket Yakalama ile
 Sanal Gerçeklikte Tenis Oyunu [5] projesi ile nitel bir kıyaslama yapmak mümkündür. Sözü edilen
 projede, tek kişilik bir oyun alanında sanal gerçeklik kullanılarak tek kişilik bir tenis oyunu
 simülasyonu gerçeklenmiştir. Bu yeni projenin bunun üzerine koyduğu en önemli unsur, ağ üzerinden
@@ -935,9 +969,12 @@ olmakla beraber; bütün bunların üzerine inşa edilebileceği sağlam bir tem
 Bu noktada artık, elde edilen uygulamanın hangi eksiklerinin kapatılabileceği ve üzerine nasıl
 gelişmeler yapılabileceğini tartışmak gerekir.
 
-İlk olarak, yeterli miktarda test yapılmadığından daha önce bahsedilmişti. Dördüncü bölümde
-tanımlanan test ortamının kurulması ve gerekli testlerin gerçekleştirilmesi, projeyi hızlı bir hata
-ayıklama ve eniyileme sürecine sokacaktır.
+İlk olarak, daha uzun ve kapsamlı bir test ve hata ayıklama süreci sonunda sistemdeki mevcut
+eksiklerin giderilmesi gerekmektedir. Sık yaşanan bakış-duruş uyumsuzluğu sistemin bir numaralı
+problemidir ve çözülmeyi beklenmektedir. Bunun haricinde, daha nadir yaşanan ağdan düşme veya
+uygulama örneklerinin birisinin hareket yakalama cihazına bağlanamaması gibi sorunlar mevcuttur.
+Tüm bu sorunların çözümü ancak daha çok deney, kayıt dosyalarının tutulması ve özenli hata ayıklama
+ile mümkündür.
 
 Kullanıcı deneyimini arttırmak için ise bu projeye yapılabilecek kimi eklemelerden burada bahsetmek
 gerekiyor. Öncelikle, kullanılabilirliği ciddi anlamda düşüren silahın ele sabitlenmesi problemi
@@ -948,9 +985,10 @@ prensip bu projeye uygulanabilir, kılıcın sağ elde bir eksen etrafında dön
 dönüşü kontrol etmesi şeklinde bunu gerçeklemek mümkün.
 
 İkinci bir kullanıcı deneyimi arttırıcı iyileştirme de muhakkak silah dizaynı ile ilgili olacaktır.
-Ucundaki belirli bir kısmı keskin kabul edilip dokunduğu gibi öldüren bir silah yerine, gerçekçi
-bir kılıç dizaynı yapılıp çeliğin sadece keskin kısmıyla temasların öldürmesi sağlanabilir. Hatta
-daha da iyisi, kılıcın yalnızca belirli bir hızla çarptığı hedefleri öldürmesi sağlanabilir.
+Şu an mevcut silahlar birbiriyle çarpışamamakta, birbirinin içinden geçmektedir. Aynı zamanda, her
+ne kadar colliderlar sadece silahın keskin kısmında olsa da, silah bedenin içinden geçebildiği için
+keskin olmayan tarafla vurararak da rakibi öldürmek mümkündür. Bu sorunların çözülmesi için
+silah ve silahla ilgili fizik özellikleri ile ilgili çalışma yürütülmelidir.
 
 Bunların haricinde yapılabilecek önemli bir ekleme ise, kapsamı kılıç dövüşünün dışına çıkarıp,
 yumruk tekme gibi saldırıların ve bunlara karşı blok alma mekanizmalarının gerçeklenmesi olacaktır.
@@ -961,6 +999,23 @@ lobi ekranı ve kimi kozmetik iyileştirmeler olacaktır.
 
 Burada sayılan yapılabilecek düzeltme ve geliştirmelerin hepsi bu projenin devamı için yakın
 zamanda uygulanması planlanan iyileştirmelerdir.
+
+Bu projenin iyileştirilmesinin yanı sıra, burada gösterilen teknolojiler ve sistem mimarisi taban
+alınarak yeni projeler de geliştirilebilir. Farklı spor dalları veya fiziksel aktiviteler için benzer
+sistemler kurmak mümkündür. Neredeyse bütün çok oyunculu spor oyunları, hareket yakalama ve sanal
+gerçeklik sayesinde gerçek bir sportif aktiviteye dönüştürülebilir.
+
+Bu raporda bahsedilen sistemde de, farklı bedensel aktiviteler için ileride kurulabilecek çok kullanıcılı
+hareket algılama sistemlerinde de karşılaşılacak en önemli sorunlardan birisi kurllanıcıların çarpışması
+sorunudur. Bu tarz sistemlerde kullanıcıların birbirine çarpması gibi etkileşimler gerçekçi fizik kuralları
+ile gerçekleştirilemez, çünkü bu durum simülasyon içerisindeki fizik işlemlerinin sonucu ile hareket
+yakalama cihazından gelen hareket verileri arasında bir çelişkiye sebep olacaktır. Kullanıcı simülasyon
+ortamında aynen yerinde fizikten etkilenip ona göre konum alırken, gerçek hayatta etkilenmeyecektir. Bu
+soruna karşı sunulabilecek bir çözüm önerisi şu olabilir: simülasyonda kullanıcılar arası bir çarpışma
+algılandığı zaman çarpışan kullanıcının hareket yakalama cihazı ile bağı bir süreliğine kesilip o sırada
+önceden belirlenmiş bir çarpışma animasyonu oynatılabilir. Animasyon oynatıldıktan sonra, kullanıcı
+avatarının kontrolü tekrardan hareket yakalama cihazına aktarıılır. Bu yöntemin, yukarıda da bahsedilen
+yumruk tekme gibi vuruşların da olduğu genel savaş sanatları simülasyonunda kullanılması planlanmaktadır.
 
 \newpage
 \bibliographystyle{IEEEtran}
