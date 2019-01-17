@@ -43,6 +43,16 @@ public class Player : NetworkBehaviour
 
     }
 
+    void Update()
+    {
+        if(Input.GetButtonDown("Fire1"))
+        {
+            gameObject.GetComponent<NeuronAnimatorInstance>().connectToAxis = false;
+            gameObject.GetComponent<NeuronAnimatorInstance>().enabled = false;
+            Invoke("HorribleFix", 1f);
+        }
+    }
+
     void DisablePlayer()
     {
         if (isLocalPlayer)
@@ -103,12 +113,14 @@ public class Player : NetworkBehaviour
             onToggleRemote.Invoke(true);
         }
         gameObject.GetComponent<NeuronAnimatorInstance>().connectToAxis = false;
+        gameObject.GetComponent<NeuronAnimatorInstance>().enabled = false;
 
-        Invoke("HorribleFix", 0.5f);
+        Invoke("HorribleFix", 1f);
     }
 
     void HorribleFix()
     {
+        gameObject.GetComponent<NeuronAnimatorInstance>().enabled = true;
         gameObject.GetComponent<NeuronAnimatorInstance>().connectToAxis = true;
     }
 
@@ -140,6 +152,9 @@ public class Player : NetworkBehaviour
         {
             onToggleRemote.Invoke(true);
         }*/
+        gameObject.GetComponent<NeuronAnimatorInstance>().connectToAxis = false;
+        gameObject.GetComponent<NeuronAnimatorInstance>().enabled = false;
+        Invoke("HorribleFix", 1f);
     }
 
     public void Die()

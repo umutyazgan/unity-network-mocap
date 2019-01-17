@@ -14,9 +14,13 @@ public class NeuronVRAdapter : NetworkBehaviour
 		// Re-Position the camera to our head bind Target
 		transform.position = bindTransform.position;
 	}
-    
 
-	void Update( )
+    void Start()
+    {
+        transform.rotation = bindTransform.rotation;
+    }
+
+    void Update( )
     {        
 		// Re-Position the camera to our head bind Target
 		if (bindTransform != null) 
